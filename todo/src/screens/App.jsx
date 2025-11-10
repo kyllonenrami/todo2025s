@@ -12,12 +12,12 @@ function App() {
   const { user } = useUser()
 
  useEffect(() => {
- axios.get(API)
- .then(response => {
- setTasks(response.data)
+  axios.get(API)
+    .then(response => {
+      setTasks(response.data)
  })
- .catch(error => {
- alert(error.response.data ? error.response.data.message : error)
+  .catch(error => {
+    alert(error.response.data ? error.response.data.message : error)
  })
  }, [])
 

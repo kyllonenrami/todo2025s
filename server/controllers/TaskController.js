@@ -1,4 +1,4 @@
-import { selectAllTasks, insertTask, deleteTask } from '../models/Task.js'
+import { selectAllTasks, insertTask, deleteTask } from '../models/task.js'
 import { ApiError } from '../helper/apiError.js'
 
 const getTasks = async (req, res, next) => {

@@ -5,7 +5,7 @@ import { getTasks, postTask, deleteTaskById } from '../controllers/TaskControlle
 
 const router = Router()
 
-router.get("/", getTasks)
+router.get("/", auth, getTasks)
 
 router.post('/create', auth, postTask)
 router.delete('/delete/:id', auth, deleteTaskById)

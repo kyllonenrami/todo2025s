@@ -49,7 +49,8 @@ describe("Testing basic database functionality", () => {
     })
     const data = await response.json()
     expect(response.status).to.equal(200)
-    expect(data).to.include.all.keys("id")
+    expect(data).to.have.keys(["message","deleted"])
+    expect(data.deleted).to.have.property("id", 1)
   })
 
   it("should not create a new task without description", async () => {
@@ -63,7 +64,8 @@ describe("Testing basic database functionality", () => {
     })
     const data = await response.json()
     expect(response.status).to.equal(400)
-    expect(data).to.include.all.keys("error")
+    expect(data).to.have.property("error")
+    expect(data.error).to.equal("Task description is required")
   })
 })
 
